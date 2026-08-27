@@ -359,7 +359,7 @@ td.amount-col.expense { color: var(--expense); }
   .form-row { grid-template-columns: 1fr; }
 }
 
-.setup-notice[hidden], .auth-screen[hidden] {
+.setup-notice[hidden], .auth-screen[hidden], .auth-form[hidden] {
   display: none;
 }
 
