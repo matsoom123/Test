@@ -7,10 +7,55 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div class="app">
+<div id="setupNotice" class="setup-notice" hidden>
+  <div class="setup-notice-inner">
+    <h2>One more step</h2>
+    <p>This app needs to be connected to a Supabase project before it can be used.
+       Open <code>js/config.js</code> and paste in your Project URL and anon key.
+       See the README for the full walkthrough.</p>
+  </div>
+</div>
+
+<div id="authScreen" class="auth-screen" hidden>
+  <div class="auth-card">
+    <h1>Finance Tracker</h1>
+    <p class="auth-subtitle">Sign in to see your data on any device.</p>
+    <div class="auth-tabs">
+      <button type="button" class="auth-tab active" data-tab="signin">Sign In</button>
+      <button type="button" class="auth-tab" data-tab="signup">Sign Up</button>
+    </div>
+    <form id="signInForm" class="auth-form">
+      <label>
+        Email
+        <input type="email" id="signInEmail" required autocomplete="email">
+      </label>
+      <label>
+        Password
+        <input type="password" id="signInPassword" required autocomplete="current-password">
+      </label>
+      <button type="submit" class="btn btn-primary">Sign In</button>
+    </form>
+    <form id="signUpForm" class="auth-form" hidden>
+      <label>
+        Email
+        <input type="email" id="signUpEmail" required autocomplete="email">
+      </label>
+      <label>
+        Password
+        <input type="password" id="signUpPassword" required autocomplete="new-password" minlength="6">
+      </label>
+      <button type="submit" class="btn btn-primary">Sign Up</button>
+    </form>
+    <p id="authMessage" class="auth-message" hidden></p>
+  </div>
+</div>
+
+<div class="app" id="appScreen" hidden>
   <header class="app-header">
     <h1>Finance Tracker</h1>
     <div class="header-actions">
+      <span id="userEmail" class="user-email"></span>
+      <button id="signOutBtn" class="btn btn-ghost">Log Out</button>
       <button id="exportBtn" class="btn btn-ghost">Export CSV</button>
       <label class="btn btn-ghost" for="importInput">Import CSV</label>
       <input type="file" id="importInput" accept=".csv" hidden>
@@ -115,6 +160,7 @@
     </div>
   </section>
 </div>
-<script src="js/app.js"></script>
+<script src="js/config.js"></script>
+<script type="module" src="js/app.js"></script>
 </body>
 </html>

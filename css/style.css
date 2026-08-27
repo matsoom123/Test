@@ -358,3 +358,109 @@ td.amount-col.expense { color: var(--expense); }
   .main-grid { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
 }
+
+.setup-notice {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.setup-notice-inner {
+  max-width: 480px;
+  background: var(--panel-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: var(--shadow);
+}
+
+.setup-notice-inner code {
+  background: var(--bg);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.auth-screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 380px;
+  background: var(--panel-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: var(--shadow);
+}
+
+.auth-card h1 {
+  margin: 0 0 4px;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.auth-subtitle {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin: 0 0 20px;
+}
+
+.auth-tabs {
+  display: flex;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 18px;
+}
+
+.auth-tab {
+  flex: 1;
+  padding: 9px 0;
+  border: none;
+  background: var(--bg);
+  color: var(--text-muted);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.auth-tab.active {
+  background: var(--primary);
+  color: white;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.auth-message {
+  margin: 14px 0 0;
+  font-size: 0.85rem;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.auth-message.error {
+  color: var(--danger);
+}
+
+.auth-message.success {
+  color: var(--income);
+}
+
+.user-email {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  align-self: center;
+  margin-right: 4px;
+}
