@@ -1,4 +1,14 @@
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+const loadingScreen = document.getElementById("loadingScreen");
+const loadingMessage = document.getElementById("loadingMessage");
+
+let createClient;
+try {
+  ({ createClient } = await import("https://esm.sh/@supabase/supabase-js@2"));
+} catch (err) {
+  loadingScreen.querySelector("h2").textContent = "Couldn't load the app";
+  loadingMessage.textContent = "Check your internet connection, then reload this page.";
+  throw err;
+}
 
 const DEFAULT_CATEGORIES = [
   "Salary", "Groceries", "Rent", "Utilities", "Transport",
@@ -14,6 +24,7 @@ const config = window.SUPABASE_CONFIG || {};
 const isConfigured = config.url && config.anonKey && !config.url.startsWith("PASTE") && !config.anonKey.startsWith("PASTE");
 
 if (!isConfigured) {
+  loadingScreen.hidden = true;
   document.getElementById("setupNotice").hidden = false;
   throw new Error("Supabase is not configured yet. Fill in js/config.js.");
 }
@@ -135,6 +146,7 @@ els.signOutBtn.addEventListener("click", async () => {
 });
 
 supabase.auth.onAuthStateChange((_event, session) => {
+  loadingScreen.hidden = true;
   currentUser = session ? session.user : null;
   if (currentUser) {
     els.authScreen.hidden = true;

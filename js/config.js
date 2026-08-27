@@ -5,5 +5,5 @@
 // supabase/schema.sql, which restrict every user to their own data.
 window.SUPABASE_CONFIG = {
   url: "https://einbnruileuuugmqzdab.supabase.co",
-  anonKey: "PASTE_YOUR_SUPABASE_ANON_KEY_HERE",
+  anonKey: "sb_publishable_r3kZFvyVGYF90oq_Jw7SWQ_FI3ZF2Sg",
 };

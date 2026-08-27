@@ -359,6 +359,10 @@ td.amount-col.expense { color: var(--expense); }
   .form-row { grid-template-columns: 1fr; }
 }
 
+.setup-notice[hidden], .auth-screen[hidden] {
+  display: none;
+}
+
 .setup-notice {
   min-height: 100vh;
   display: flex;
