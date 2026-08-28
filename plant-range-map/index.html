@@ -9,18 +9,21 @@
 <body>
 <header class="site-header">
   <h1>🌿 US Native Plant Range Map</h1>
-  <p class="subtitle">Pick a plant to see where it's native — and how to grow it.</p>
+  <p class="subtitle">Pick a plant to see where it's native, or click a state to see what's native there.</p>
 </header>
 
 <main class="layout">
   <section class="controls">
-    <label for="plantSelect" class="select-label">Choose a plant</label>
-    <select id="plantSelect">
-      <option value="">— Select a plant —</option>
-    </select>
+    <div class="select-group">
+      <label for="plantSelect" id="selectLabel" class="select-label">Choose a plant</label>
+      <select id="plantSelect">
+        <option value="">— Select a plant —</option>
+      </select>
+    </div>
     <p class="legend">
       <span class="legend-swatch"></span> Native range (approximate)
     </p>
+    <button type="button" id="backButton" class="btn-back" hidden>← Back to full US map</button>
   </section>
 
   <section class="map-wrap">
@@ -30,8 +33,10 @@
 
   <aside id="careCard" class="care-card" hidden>
     <button type="button" id="careCardClose" class="care-card-close" aria-label="Close">×</button>
-    <h2 id="careName"></h2>
-    <p id="careScientific" class="scientific-name"></p>
+    <div class="care-card-head">
+      <h2 id="careName"></h2>
+      <p id="careScientific" class="scientific-name"></p>
+    </div>
     <p id="careDescription" class="description"></p>
     <dl class="care-details">
       <div><dt>Sunlight</dt><dd id="careSunlight"></dd></div>
