@@ -200,6 +200,7 @@
     document.getElementById("careBloom").textContent = plant.care.bloomTime;
     document.getElementById("careHeight").textContent = plant.care.matureHeight;
     document.getElementById("careNotes").textContent = plant.care.notes;
+    document.getElementById("careFunFactText").textContent = plant.funFact;
     document.getElementById("careStateCount").textContent =
       `Native to ${plant.nativeStates.length} state${plant.nativeStates.length === 1 ? "" : "s"}.`;
     careCard.hidden = false;

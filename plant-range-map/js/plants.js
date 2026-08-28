@@ -25,6 +25,7 @@ window.PLANTS = [
       notes: "Understory tree; tolerates light shade well. Prune after flowering, not in fall/winter, to avoid losing next year's buds.",
     },
     description: "A small deciduous tree known for clusters of pink-purple flowers that appear directly on bare branches in early spring.",
+    funFact: "Its flowers and young seed pods are edible — pioneers tossed the raw blossoms into salads, and a European relative gave the tree its other common name, the \"Judas tree,\" from a legend that Judas hanged himself from one.",
   },
   {
     id: "purple-coneflower",
@@ -44,6 +45,7 @@ window.PLANTS = [
       notes: "Leave seed heads standing through winter — goldfinches and other birds feed on them.",
     },
     description: "A tough, long-blooming prairie perennial with large pink-purple daisy-like flowers and a spiky orange center cone.",
+    funFact: "Its genus name Echinacea comes from the Greek \"echinos,\" meaning hedgehog or sea urchin — a nod to the spiky, bristly cone at the center of each flower.",
   },
   {
     id: "black-eyed-susan",
@@ -65,6 +67,7 @@ window.PLANTS = [
       notes: "Self-seeds readily. Biennial or short-lived perennial — let some flowers go to seed to keep a patch going.",
     },
     description: "One of the most widespread North American wildflowers: bright yellow petals around a dark brown, dome-shaped center.",
+    funFact: "It's the state flower of Maryland, chosen in part because its gold-and-black coloring echoes the black-and-orange of the state flag and the Baltimore Orioles.",
   },
   {
     id: "butterfly-weed",
@@ -86,6 +89,7 @@ window.PLANTS = [
       notes: "A milkweed species — larval host plant for monarch butterflies. Slow to emerge in spring; taproot resents transplanting once established.",
     },
     description: "A milkweed relative with clusters of vivid orange flowers, a key nectar and host plant for monarch butterflies.",
+    funFact: "Monarch caterpillars eat its toxic sap and store the toxins in their own bodies, making themselves poisonous to predators for life — the plant's defense becomes the butterfly's.",
   },
   {
     id: "california-poppy",
@@ -102,6 +106,7 @@ window.PLANTS = [
       notes: "Direct-sow; taproot doesn't transplant well. Closes its petals at night and on cloudy days.",
     },
     description: "California's state flower — silky, cup-shaped orange-gold blooms over feathery blue-green foliage.",
+    funFact: "It's illegal to pick California poppies on state or public land without permission — as the official state flower, it's protected by California law.",
   },
   {
     id: "serviceberry",
@@ -122,6 +127,7 @@ window.PLANTS = [
       notes: "Edible summer berries attract birds fast. Good small tree for woodland edges and under power lines.",
     },
     description: "A small native tree with white spring flowers, edible summer berries, and reliable orange-red fall color.",
+    funFact: "Its name may come from early settlers noticing it bloomed just as mountain roads thawed enough for circuit-riding preachers to reach remote towns and hold burial \"services\" for those who'd died over winter.",
   },
   {
     id: "bee-balm",
@@ -141,6 +147,7 @@ window.PLANTS = [
       notes: "Prone to powdery mildew in still, humid air — give it good air circulation. Spreads by rhizomes; divide every few years.",
     },
     description: "A fragrant mint-family perennial with shaggy scarlet flower heads that hummingbirds and bees can't resist.",
+    funFact: "Also called \"Oswego tea,\" it was brewed as a substitute for real tea by American colonists after the Boston Tea Party made British tea unpatriotic to drink.",
   },
   {
     id: "little-bluestem",
@@ -162,6 +169,7 @@ window.PLANTS = [
       notes: "Warm-season bunchgrass — leave standing through winter for texture and wildlife cover, cut back in early spring.",
     },
     description: "A clumping native prairie grass, blue-green in summer and copper-orange in fall, valued for erosion control and winter interest.",
+    funFact: "It was once one of the dominant grasses of the vast tallgrass prairie that covered much of the central US before most of it was plowed under for farmland.",
   },
   {
     id: "cardinal-flower",
@@ -183,6 +191,7 @@ window.PLANTS = [
       notes: "A favorite of hummingbirds. Short-lived perennial that self-seeds; keep soil consistently moist, never let it dry out.",
     },
     description: "A striking wetland-edge perennial with tall spikes of brilliant red tubular flowers.",
+    funFact: "Its flowers are shaped so precisely for a hummingbird's long tongue and bill that bees and other insects rarely manage to pollinate it at all.",
   },
   {
     id: "joe-pye-weed",
@@ -204,6 +213,7 @@ window.PLANTS = [
       notes: "A magnet for butterflies. Give it room — it's a big, statuesque back-of-border plant.",
     },
     description: "A tall, stately native perennial with large dusty-pink flower domes that draw butterflies by the dozens.",
+    funFact: "It's named for a legendary Indigenous healer, \"Joe Pye,\" said to have used the plant to break fevers — possibly typhus — among colonial New England settlers.",
   },
   {
     id: "blanketflower",
@@ -223,6 +233,7 @@ window.PLANTS = [
       notes: "Deadhead to prolong bloom. Avoid overly rich soil or overwatering, which causes floppy growth and rot.",
     },
     description: "A cheerful, heat-loving wildflower with red-and-yellow daisy blooms that flower nonstop all summer.",
+    funFact: "Its common name comes from the way big drifts of its red-and-yellow blooms resemble colorful woven blankets when seen across a field.",
   },
   {
     id: "prairie-blazing-star",
@@ -242,6 +253,7 @@ window.PLANTS = [
       notes: "Blooms top-down, unusual for a spike flower. A strong butterfly and bee attractor; corms are a favorite of voles/rodents.",
     },
     description: "A dramatic prairie native with dense purple flower spikes that bloom from the top down, unlike most spike-flowering plants.",
+    funFact: "It blooms top-down the spike, the opposite of nearly every other spike-flowering plant — a quirk that reportedly puzzled early botanists trying to key it out.",
   },
   {
     id: "western-redbud",
@@ -258,6 +270,7 @@ window.PLANTS = [
       notes: "Magenta-pink flowers appear directly on bare branches; reddish seed pods persist into winter. Overwatering once established can shorten its life.",
     },
     description: "A small, tough native tree or large shrub covered in magenta-pink blooms in early spring, before its heart-shaped leaves emerge.",
+    funFact: "Its flexible young branches, which turn a deep red in winter, were prized by California Indigenous basket weavers as a decorative material.",
   },
   {
     id: "california-lilac",
@@ -274,6 +287,7 @@ window.PLANTS = [
       notes: "One of the best California natives for pollinators. The leading cause of death is overwatering — give it none in summer once established.",
     },
     description: "An evergreen native shrub covered in clouds of powder-blue to deep-blue flower clusters each spring, beloved by bees and butterflies.",
+    funFact: "Despite the common name, it isn't a true lilac at all — it's in the buckthorn family, and its flowers can be crushed with water into a mild, soapy lather sometimes called \"California soap.\"",
   },
   {
     id: "california-fuchsia",
@@ -290,6 +304,7 @@ window.PLANTS = [
       notes: "A late-season hummingbird magnet when little else is blooming. Spreads by rhizomes; cut back hard in late winter.",
     },
     description: "A sprawling, silvery-leaved perennial with tubular orange-red flowers that bloom right through the dry late summer, a favorite of hummingbirds.",
+    funFact: "It's one of the last native plants blooming in fall, making it a critical fuel stop for hummingbirds fattening up before their long migration south.",
   },
   {
     id: "toyon",
@@ -306,6 +321,7 @@ window.PLANTS = [
       notes: "Winter berries are an important food source for native birds. Reportedly the plant that gave Hollywood its name, for its holly-like winter berries.",
     },
     description: "An evergreen large shrub with clusters of white summer flowers followed by bright red winter berries that feed native birds.",
+    funFact: "Early settlers thought its berry-covered branches looked so much like English holly that hillsides covered in it reportedly inspired the name \"Hollywood.\"",
   },
   {
     id: "california-buckwheat",
@@ -322,6 +338,7 @@ window.PLANTS = [
       notes: "A key host and nectar plant for native bees and butterflies, including several rare species. Leave the rust-colored dried flower heads standing for winter interest.",
     },
     description: "A tough, long-blooming evergreen shrub with clusters of small white-to-pink flowers that age to rust — a workhorse plant for California native bees and butterflies.",
+    funFact: "It's one of the most important nectar sources for the endangered El Segundo blue butterfly, which lives nowhere else on Earth but a few California dune fragments.",
   },
   {
     id: "matilija-poppy",
@@ -338,6 +355,7 @@ window.PLANTS = [
       notes: "Nicknamed the \"fried egg plant\" for its huge crepe-paper petals around a golden center. Spreads aggressively by rhizomes once established — give it room.",
     },
     description: "A dramatic, fast-spreading perennial with enormous white flowers around a yellow center, nicknamed the \"fried egg plant.\"",
+    funFact: "Its crepe-paper flowers can reach nearly 9 inches across — among the largest of any California native wildflower.",
   },
   {
     id: "california-sagebrush",
@@ -354,6 +372,7 @@ window.PLANTS = [
       notes: "Grown mainly for its soft, aromatic, silvery-green foliage rather than its flowers — a signature scent of California's coastal sage scrub after rain.",
     },
     description: "A soft, aromatic silvery-green shrub whose fragrance defines California's coastal sage scrub habitat after rain.",
+    funFact: "Despite smelling like sage, it isn't a true sage (Salvia) at all — it's actually in the same genus as tarragon and wormwood.",
   },
   {
     id: "douglas-iris",
@@ -370,6 +389,7 @@ window.PLANTS = [
       notes: "Flower color varies widely from lavender to cream to deep purple. Slow to establish; divide clumps every few years to keep them vigorous.",
     },
     description: "A clumping native iris with elegant lavender-to-purple spring blooms, common along California's coastal bluffs and woodlands.",
+    funFact: "Its flower color is so variable between populations — lavender, cream, deep purple, even near-white — that early botanists sometimes mistook different color forms for separate species.",
   },
   {
     id: "coast-live-oak",
@@ -386,6 +406,7 @@ window.PLANTS = [
       notes: "One of California's iconic evergreen oaks. Never irrigate near the trunk of a mature oak in summer — it's a leading cause of oak decline in landscaped settings.",
     },
     description: "A massive, long-lived evergreen oak with a broad canopy — one of the defining trees of California's coastal woodlands.",
+    funFact: "Some individual coast live oaks are estimated to be over 500 years old, and their acorns were once a dietary staple for California Indigenous peoples, ground into flour after leaching out the bitter tannins.",
   },
   {
     id: "coast-redwood",
@@ -402,6 +423,7 @@ window.PLANTS = [
       notes: "The tallest tree species on Earth. Needs a lot of room and consistent water — struggles in hot, dry inland gardens without irrigation or coastal fog.",
     },
     description: "The world's tallest tree species, forming majestic groves along California's fog-belt coast.",
+    funFact: "The tallest known living tree on Earth, a coast redwood nicknamed \"Hyperion,\" stands over 380 feet tall — taller than a 35-story building.",
   },
   {
     id: "giant-sequoia",
@@ -418,6 +440,7 @@ window.PLANTS = [
       notes: "Native only to a narrow band of the Sierra Nevada. Needs far more space and a cooler climate than most gardens can offer — mainly grown as a specimen or in parks.",
     },
     description: "The most massive tree species on Earth by volume, native only to scattered groves on the western slope of the Sierra Nevada.",
+    funFact: "The largest tree on Earth by volume, \"General Sherman,\" weighs an estimated 2.7 million pounds — roughly as much as 20 blue whales.",
   },
   {
     id: "manzanita",
@@ -434,6 +457,7 @@ window.PLANTS = [
       notes: "Smooth, mahogany-red bark is a year-round highlight. Like most manzanitas, very sensitive to summer irrigation and poor drainage.",
     },
     description: "An evergreen shrub prized for its smooth mahogany-red bark and clusters of small urn-shaped flowers in late winter.",
+    funFact: "\"Manzanita\" means \"little apple\" in Spanish, named for its small apple-shaped fruits, which California Indigenous peoples ate fresh or fermented into a tart cider.",
   },
   {
     id: "purple-needlegrass",
@@ -450,6 +474,7 @@ window.PLANTS = [
       notes: "California's official state grass, and a keystone species of native bunchgrass prairie. Deep roots (up to 20 ft) make it extremely drought-hardy once established.",
     },
     description: "California's official state grass — a deep-rooted native bunchgrass with graceful, purple-tinged seed heads that once dominated the state's prairies.",
+    funFact: "Its seed has a sharp, twisting awn that acts like a tiny drill bit, corkscrewing itself into soil (or a hiker's sock) as it dries out.",
   },
   {
     id: "deergrass",
@@ -466,6 +491,7 @@ window.PLANTS = [
       notes: "A tough, low-maintenance bunchgrass traditionally used by California Indigenous peoples for basketry. Cut back every year or two to keep it tidy.",
     },
     description: "A large, fountain-shaped native bunchgrass with tall narrow flower spikes, historically important to California Indigenous basketry.",
+    funFact: "Its long, straight flower stems were a prized material for coiled baskets made by California Indigenous weavers — museum-quality examples today can sell for thousands of dollars.",
   },
   {
     id: "coyote-brush",
@@ -482,6 +508,7 @@ window.PLANTS = [
       notes: "One of the toughest, most adaptable California natives — widely used for erosion control and habitat restoration. Male and female flowers grow on separate plants; females produce fluffy white seed heads.",
     },
     description: "An extremely tough, adaptable native shrub (or low groundcover, depending on the variety) widely used for erosion control and habitat restoration.",
+    funFact: "Individual plants are either all-male or all-female — only females produce the fluffy white seed heads, so some coyote brush \"snows\" in fall and neighboring plants don't.",
   },
   {
     id: "california-wild-rose",
@@ -498,6 +525,7 @@ window.PLANTS = [
       notes: "Fragrant pink single-petaled flowers followed by red rose hips valued by birds. Spreads by suckering — best in a naturalized area, not a tidy border.",
     },
     description: "A fragrant, thicket-forming native rose with simple pink blooms in summer and red hips that feed birds through fall and winter.",
+    funFact: "Its hips are packed with vitamin C — often cited as containing more, ounce for ounce, than an orange — and were traditionally used to make teas and syrups.",
   },
   {
     id: "blue-eyed-grass",
@@ -514,6 +542,7 @@ window.PLANTS = [
       notes: "Not a true grass — it's in the iris family. Small purple-blue, star-shaped flowers open only in sunshine. Self-seeds readily in a meadow planting.",
     },
     description: "A grass-like member of the iris family with small, star-shaped violet-blue flowers that open only in sunlight.",
+    funFact: "Despite the name and grass-like leaves, it isn't a grass at all — genetically it's a miniature iris, just built on a much smaller scale.",
   },
   {
     id: "hummingbird-sage",
@@ -530,6 +559,7 @@ window.PLANTS = [
       notes: "One of the few California sages that tolerates shade. Sticky, fragrant leaves and tall magenta flower spikes are a hummingbird favorite.",
     },
     description: "A shade-tolerant native sage with sticky, fragrant leaves and tall magenta flower spikes that hummingbirds seek out.",
+    funFact: "Crushing its leaves releases a scent many people compare to grape soda — a surprising note for a sage.",
   },
   {
     id: "cleveland-sage",
@@ -546,6 +576,7 @@ window.PLANTS = [
       notes: "One of the most fragrant California native shrubs — leaves release a strong sage scent when brushed. Extremely drought tolerant; overwatering is its main threat.",
     },
     description: "A powerfully fragrant native shrub with whorls of lavender-blue flowers, prized as one of the best bee and hummingbird plants for a dry garden.",
+    funFact: "Its dried flower stalks are traditionally bundled into smudge sticks, and some perfumers rank its scent among the most distinctive of any sage.",
   },
   {
     id: "bush-monkeyflower",
@@ -562,6 +593,7 @@ window.PLANTS = [
       notes: "Sticky, slightly resinous leaves. Flower color ranges from pale yellow to deep orange-red depending on the population. Prune lightly after bloom to keep it compact.",
     },
     description: "A sprawling, sticky-leaved native shrub with trumpet-shaped flowers in shades of yellow, orange, or red, blooming for much of the year near the coast.",
+    funFact: "Its scientific name references a face-like pattern inside the flower that early botanists thought resembled a grinning monkey — hence \"monkeyflower.\"",
   },
   {
     id: "coffeeberry",
@@ -578,6 +610,7 @@ window.PLANTS = [
       notes: "Berries pass through red before ripening to black, resembling coffee beans (not edible for people). A reliable, low-maintenance habitat shrub for birds.",
     },
     description: "An easygoing evergreen shrub whose berries ripen from green to red to coffee-bean black, providing food for birds through fall.",
+    funFact: "It's completely unrelated to real coffee — the name comes purely from the berries' resemblance to coffee cherries as they ripen through green, red, and black.",
   },
   {
     id: "foothill-penstemon",
@@ -594,6 +627,7 @@ window.PLANTS = [
       notes: "Vivid blue-to-purple tubular flowers are a strong hummingbird and native bee draw. Good drainage is essential — prone to rot in heavy, wet soil.",
     },
     description: "A compact native perennial with vivid blue-purple tubular flowers that hummingbirds and native bees flock to.",
+    funFact: "\"Penstemon\" means \"five stamens\" in Greek — most flowers have four fertile stamens plus a fifth, sterile, often fuzzy one, which gives many species the nickname \"beardtongue.\"",
   },
   {
     id: "elegant-clarkia",
@@ -610,6 +644,7 @@ window.PLANTS = [
       notes: "An easy-to-grow native annual wildflower — direct-sow in fall for a spring bloom. Self-seeds readily once established in a garden bed.",
     },
     description: "A cheerful native annual wildflower with delicate four-petaled pink-to-lavender blooms held on tall, airy stems.",
+    funFact: "The genus Clarkia is named for Captain William Clark of the Lewis and Clark Expedition, who collected the first scientific specimens along the Columbia River in 1806.",
   },
   {
     id: "yarrow",
@@ -631,5 +666,6 @@ window.PLANTS = [
       notes: "One of the most widespread native plants in North America, found in nearly every US state. Flat-topped flower clusters attract beneficial insects; feathery, aromatic foliage.",
     },
     description: "A finely textured, aromatic perennial with flat-topped clusters of tiny white (sometimes pink) flowers — one of the most widespread native wildflowers in North America.",
+    funFact: "Its scientific name Achillea references the Greek hero Achilles, who legend says used yarrow to treat his soldiers' wounds during the Trojan War.",
   },
 ];
