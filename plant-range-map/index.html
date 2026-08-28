@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>US Native Plant Range Map</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <h1>🌿 US Native Plant Range Map</h1>
+  <p class="subtitle">Pick a plant to see where it's native — and how to grow it.</p>
+</header>
+
+<main class="layout">
+  <section class="controls">
+    <label for="plantSelect" class="select-label">Choose a plant</label>
+    <select id="plantSelect">
+      <option value="">— Select a plant —</option>
+    </select>
+    <p class="legend">
+      <span class="legend-swatch"></span> Native range (approximate)
+    </p>
+  </section>
+
+  <section class="map-wrap">
+    <svg id="usMap" viewBox="-60 5 1025 605" role="img" aria-label="Map of the United States"></svg>
+    <div id="mapTooltip" class="map-tooltip" hidden></div>
+  </section>
+
+  <aside id="careCard" class="care-card" hidden>
+    <button type="button" id="careCardClose" class="care-card-close" aria-label="Close">×</button>
+    <h2 id="careName"></h2>
+    <p id="careScientific" class="scientific-name"></p>
+    <p id="careDescription" class="description"></p>
+    <dl class="care-details">
+      <div><dt>Sunlight</dt><dd id="careSunlight"></dd></div>
+      <div><dt>Water</dt><dd id="careWater"></dd></div>
+      <div><dt>Soil</dt><dd id="careSoil"></dd></div>
+      <div><dt>Hardiness zones</dt><dd id="careZones"></dd></div>
+      <div><dt>Bloom time</dt><dd id="careBloom"></dd></div>
+      <div><dt>Mature height</dt><dd id="careHeight"></dd></div>
+    </dl>
+    <p id="careNotes" class="notes"></p>
+    <p id="careStateCount" class="state-count"></p>
+  </aside>
+</main>
+
+<footer class="site-footer">
+  <p>Native ranges are simplified for illustration (based on general USDA PLANTS / BONAP range
+     descriptions) — always check the
+     <a href="https://plants.usda.gov/" target="_blank" rel="noopener">USDA PLANTS Database</a>
+     before making planting decisions.</p>
+</footer>
+
+<script src="js/vendor/d3.min.js"></script>
+<script src="js/vendor/topojson-client.min.js"></script>
+<script src="js/states.js"></script>
+<script src="js/plants.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
