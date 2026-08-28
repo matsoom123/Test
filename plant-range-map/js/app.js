@@ -17,6 +17,7 @@
   const tooltip = document.getElementById("mapTooltip");
   const select = document.getElementById("plantSelect");
   const selectLabel = document.getElementById("selectLabel");
+  const biomeSelect = document.getElementById("biomeSelect");
   const backButton = document.getElementById("backButton");
   const careCard = document.getElementById("careCard");
   const careCardClose = document.getElementById("careCardClose");
@@ -25,11 +26,26 @@
   let statesGroup = null;
   let statesSelection = null;
 
-  populateSelect(window.PLANTS, null);
+  // Current filter context. A state click and a biome pick compose: e.g.
+  // zooming to Nevada while "Desert" is selected shows only Nevada plants
+  // tagged with the desert biome (only California plants carry a biome tag,
+  // so most non-CA states will simply show no matches for any biome).
+  let currentZoomAbbr = null;
+  let currentZoomName = null;
+  let currentBiome = "";
+
+  populateBiomeSelect();
+  refreshPlantList();
   loadMap();
 
   select.addEventListener("change", () => {
     applySelection(select.value);
+  });
+
+  biomeSelect.addEventListener("change", () => {
+    currentBiome = biomeSelect.value;
+    updateSelectLabel();
+    refreshPlantList();
   });
 
   careCardClose.addEventListener("click", () => {
@@ -39,20 +55,63 @@
 
   backButton.addEventListener("click", resetZoom);
 
-  function populateSelect(plantList, stateAbbr) {
+  function populateBiomeSelect() {
+    const biomes = [...new Set(window.PLANTS.map((p) => p.biome).filter(Boolean))].sort();
+    for (const biome of biomes) {
+      const option = document.createElement("option");
+      option.value = biome;
+      option.textContent = biome;
+      biomeSelect.appendChild(option);
+    }
+  }
+
+  function getVisiblePlants() {
+    let plants = window.PLANTS;
+    if (currentZoomAbbr) {
+      plants = plants.filter((p) => p.nativeStates.includes(currentZoomAbbr));
+    }
+    if (currentBiome) {
+      plants = plants.filter((p) => p.biome === currentBiome);
+    }
+    return plants;
+  }
+
+  function isFilterActive() {
+    return Boolean(currentZoomAbbr || currentBiome);
+  }
+
+  function updateSelectLabel() {
+    if (currentZoomName && currentBiome) {
+      selectLabel.textContent = `Plants native to ${currentZoomName} — ${currentBiome}`;
+    } else if (currentZoomName) {
+      selectLabel.textContent = `Plants native to ${currentZoomName}`;
+    } else if (currentBiome) {
+      selectLabel.textContent = `California native plants — ${currentBiome}`;
+    } else {
+      selectLabel.textContent = "Choose a plant";
+    }
+  }
+
+  function refreshPlantList() {
+    populateSelect(getVisiblePlants(), isFilterActive());
+    select.value = "";
+    applySelection("");
+  }
+
+  function populateSelect(plantList, isFiltered) {
     select.innerHTML = "";
 
     const placeholder = document.createElement("option");
     placeholder.value = "";
 
-    if (stateAbbr && plantList.length === 0) {
-      placeholder.textContent = "No plants in this list are native here";
+    if (isFiltered && plantList.length === 0) {
+      placeholder.textContent = "No plants in this list match";
       select.appendChild(placeholder);
       select.disabled = true;
       return;
     }
 
-    placeholder.textContent = stateAbbr
+    placeholder.textContent = isFiltered
       ? `— Select a plant (${plantList.length}) —`
       : "— Select a plant —";
     select.appendChild(placeholder);
@@ -138,17 +197,16 @@
       .ease(d3.easeCubicInOut)
       .attr("transform", `translate(${tx},${ty}) scale(${scale})`);
 
-    selectLabel.textContent = `Plants native to ${name}`;
+    currentZoomAbbr = abbr;
+    currentZoomName = name;
     backButton.hidden = false;
 
     statesSelection.style("display", (s) =>
       INSET_FIPS.has(+s.id) && +s.id !== +d.id ? "none" : null
     );
 
-    const matches = window.PLANTS.filter((p) => p.nativeStates.includes(abbr));
-    populateSelect(matches, abbr);
-    select.value = "";
-    applySelection("");
+    updateSelectLabel();
+    refreshPlantList();
   }
 
   function resetZoom() {
@@ -160,16 +218,18 @@
         .attr("transform", null);
     }
 
-    selectLabel.textContent = "Choose a plant";
+    currentZoomAbbr = null;
+    currentZoomName = null;
+    currentBiome = "";
+    biomeSelect.value = "";
     backButton.hidden = true;
 
     if (statesSelection) {
       statesSelection.style("display", null);
     }
 
-    populateSelect(window.PLANTS, null);
-    select.value = "";
-    applySelection("");
+    updateSelectLabel();
+    refreshPlantList();
   }
 
   function applySelection(plantId) {

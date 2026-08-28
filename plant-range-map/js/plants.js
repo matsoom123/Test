@@ -96,6 +96,7 @@ window.PLANTS = [
     commonName: "California Poppy",
     scientificName: "Eschscholzia californica",
     nativeStates: ["CA", "OR", "WA", "NV", "AZ", "NM"],
+    biome: "Grassland / Prairie",
     care: {
       sunlight: "Full sun",
       water: "Low — thrives on winter/spring rain, drought-tolerant in summer",
@@ -260,6 +261,7 @@ window.PLANTS = [
     commonName: "Western Redbud",
     scientificName: "Cercis occidentalis",
     nativeStates: ["CA", "NV", "AZ", "UT"],
+    biome: "Chaparral",
     care: {
       sunlight: "Full sun to part shade",
       water: "Low once established — drought-tolerant",
@@ -277,6 +279,7 @@ window.PLANTS = [
     commonName: "California Lilac (Blueblossom)",
     scientificName: "Ceanothus thyrsiflorus",
     nativeStates: ["CA", "OR"],
+    biome: "Chaparral",
     care: {
       sunlight: "Full sun to part shade",
       water: "Low — avoid summer water once established",
@@ -294,6 +297,7 @@ window.PLANTS = [
     commonName: "California Fuchsia",
     scientificName: "Epilobium canum",
     nativeStates: ["CA", "AZ", "NV", "UT", "OR"],
+    biome: "Chaparral",
     care: {
       sunlight: "Full sun",
       water: "Low — very drought-tolerant once established",
@@ -311,6 +315,7 @@ window.PLANTS = [
     commonName: "Toyon (Christmas Berry)",
     scientificName: "Heteromeles arbutifolia",
     nativeStates: ["CA"],
+    biome: "Chaparral",
     care: {
       sunlight: "Full sun to part shade",
       water: "Low once established",
@@ -328,6 +333,7 @@ window.PLANTS = [
     commonName: "California Buckwheat",
     scientificName: "Eriogonum fasciculatum",
     nativeStates: ["CA", "AZ", "NV", "UT"],
+    biome: "Coastal Sage Scrub",
     care: {
       sunlight: "Full sun",
       water: "Low — excellent drought tolerance",
@@ -345,6 +351,7 @@ window.PLANTS = [
     commonName: "Matilija Poppy",
     scientificName: "Romneya coulteri",
     nativeStates: ["CA"],
+    biome: "Chaparral",
     care: {
       sunlight: "Full sun",
       water: "Low — very drought-tolerant once established",
@@ -362,6 +369,7 @@ window.PLANTS = [
     commonName: "California Sagebrush",
     scientificName: "Artemisia californica",
     nativeStates: ["CA"],
+    biome: "Coastal Sage Scrub",
     care: {
       sunlight: "Full sun",
       water: "Low — very drought-tolerant",
@@ -379,6 +387,7 @@ window.PLANTS = [
     commonName: "Douglas Iris",
     scientificName: "Iris douglasiana",
     nativeStates: ["CA", "OR"],
+    biome: "Oak Woodland",
     care: {
       sunlight: "Part shade to full sun near the coast",
       water: "Low to moderate — drought-tolerant once established but appreciates some water",
@@ -396,6 +405,7 @@ window.PLANTS = [
     commonName: "Coast Live Oak",
     scientificName: "Quercus agrifolia",
     nativeStates: ["CA"],
+    biome: "Oak Woodland",
     care: {
       sunlight: "Full sun to part shade",
       water: "Very low once established — mature trees can be harmed by summer irrigation",
@@ -413,6 +423,7 @@ window.PLANTS = [
     commonName: "Coast Redwood",
     scientificName: "Sequoia sempervirens",
     nativeStates: ["CA", "OR"],
+    biome: "Redwood Forest",
     care: {
       sunlight: "Full sun to part shade",
       water: "Moderate to high — needs consistent moisture, especially away from coastal fog",
@@ -430,6 +441,7 @@ window.PLANTS = [
     commonName: "Giant Sequoia",
     scientificName: "Sequoiadendron giganteum",
     nativeStates: ["CA"],
+    biome: "Sierra Nevada Forest",
     care: {
       sunlight: "Full sun",
       water: "Moderate — deep, infrequent watering once established",
@@ -447,6 +459,7 @@ window.PLANTS = [
     commonName: "Manzanita (Common)",
     scientificName: "Arctostaphylos manzanita",
     nativeStates: ["CA"],
+    biome: "Chaparral",
     care: {
       sunlight: "Full sun to part shade",
       water: "Low — drought-tolerant once established, avoid summer water",
@@ -464,6 +477,7 @@ window.PLANTS = [
     commonName: "Purple Needlegrass",
     scientificName: "Stipa pulchra",
     nativeStates: ["CA"],
+    biome: "Grassland / Prairie",
     care: {
       sunlight: "Full sun",
       water: "Low — very drought-tolerant once established",
@@ -481,6 +495,7 @@ window.PLANTS = [
     commonName: "Deergrass",
     scientificName: "Muhlenbergia rigens",
     nativeStates: ["CA", "AZ", "NM", "TX", "UT", "NV"],
+    biome: "Grassland / Prairie",
     care: {
       sunlight: "Full sun to part shade",
       water: "Low to moderate",
@@ -498,6 +513,7 @@ window.PLANTS = [
     commonName: "Coyote Brush",
     scientificName: "Baccharis pilularis",
     nativeStates: ["CA", "OR"],
+    biome: "Coastal Sage Scrub",
     care: {
       sunlight: "Full sun to part shade",
       water: "Low once established",
@@ -515,6 +531,7 @@ window.PLANTS = [
     commonName: "California Wild Rose",
     scientificName: "Rosa californica",
     nativeStates: ["CA"],
+    biome: "Riparian / Wetland",
     care: {
       sunlight: "Full sun to part shade",
       water: "Low to moderate",
@@ -532,6 +549,7 @@ window.PLANTS = [
     commonName: "Blue-Eyed Grass",
     scientificName: "Sisyrinchium bellum",
     nativeStates: ["CA", "OR"],
+    biome: "Grassland / Prairie",
     care: {
       sunlight: "Full sun to part shade",
       water: "Low to moderate",
@@ -549,6 +567,7 @@ window.PLANTS = [
     commonName: "Hummingbird Sage",
     scientificName: "Salvia spathacea",
     nativeStates: ["CA"],
+    biome: "Oak Woodland",
     care: {
       sunlight: "Part shade to full sun near the coast",
       water: "Low to moderate",
@@ -566,6 +585,7 @@ window.PLANTS = [
     commonName: "Cleveland Sage",
     scientificName: "Salvia clevelandii",
     nativeStates: ["CA"],
+    biome: "Coastal Sage Scrub",
     care: {
       sunlight: "Full sun",
       water: "Very low once established",
@@ -583,6 +603,7 @@ window.PLANTS = [
     commonName: "Bush Monkeyflower (Sticky Monkeyflower)",
     scientificName: "Diplacus aurantiacus",
     nativeStates: ["CA", "OR"],
+    biome: "Chaparral",
     care: {
       sunlight: "Full sun to part shade",
       water: "Low once established",
@@ -600,6 +621,7 @@ window.PLANTS = [
     commonName: "Coffeeberry",
     scientificName: "Frangula californica",
     nativeStates: ["CA", "OR"],
+    biome: "Oak Woodland",
     care: {
       sunlight: "Full sun to part shade",
       water: "Low to moderate",
@@ -617,6 +639,7 @@ window.PLANTS = [
     commonName: "Foothill Penstemon",
     scientificName: "Penstemon heterophyllus",
     nativeStates: ["CA"],
+    biome: "Chaparral",
     care: {
       sunlight: "Full sun",
       water: "Low once established",
@@ -634,6 +657,7 @@ window.PLANTS = [
     commonName: "Elegant Clarkia",
     scientificName: "Clarkia unguiculata",
     nativeStates: ["CA"],
+    biome: "Grassland / Prairie",
     care: {
       sunlight: "Full sun to part shade",
       water: "Low — a spring annual that thrives on winter/spring rain",
@@ -656,6 +680,7 @@ window.PLANTS = [
       "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SD", "TN", "TX",
       "UT", "VT", "VA", "WA", "WV", "WI", "WY",
     ],
+    biome: "Grassland / Prairie",
     care: {
       sunlight: "Full sun",
       water: "Low — very drought-tolerant once established",
@@ -667,5 +692,23 @@ window.PLANTS = [
     },
     description: "A finely textured, aromatic perennial with flat-topped clusters of tiny white (sometimes pink) flowers — one of the most widespread native wildflowers in North America.",
     funFact: "Its scientific name Achillea references the Greek hero Achilles, who legend says used yarrow to treat his soldiers' wounds during the Trojan War.",
+  },
+  {
+    id: "joshua-tree",
+    commonName: "Joshua Tree",
+    scientificName: "Yucca brevifolia",
+    nativeStates: ["CA", "NV", "AZ", "UT"],
+    biome: "Desert",
+    care: {
+      sunlight: "Full sun",
+      water: "Very low — extremely drought-tolerant once established",
+      soil: "Well-drained, sandy or rocky soil; will rot in wet soil",
+      hardinessZones: "7 – 10",
+      bloomTime: "Late winter to early spring, often following a hard freeze",
+      matureHeight: "15 – 40 ft; very slow-growing (roughly 1.5 in/year)",
+      notes: "A Mojave Desert keystone species. Extremely slow-growing — a mature specimen may be over 150 years old. Never overwater; good drainage is essential.",
+    },
+    description: "A spiky-leaved tree yucca and icon of the Mojave Desert, found in the wild nowhere else on Earth outside a narrow band of the American Southwest.",
+    funFact: "It's pollinated by only one species on Earth — the yucca moth — in one of nature's most exclusive partnerships; without that single moth, Joshua trees couldn't reproduce at all.",
   },
 ];

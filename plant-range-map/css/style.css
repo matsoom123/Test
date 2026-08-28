@@ -101,6 +101,17 @@ body {
   opacity: 0.7;
 }
 
+#biomeSelect {
+  width: 220px;
+  max-width: 100%;
+  padding: 0.55rem 0.6rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
 .legend {
   display: flex;
   align-items: center;
@@ -319,7 +330,8 @@ body {
   .controls {
     align-items: stretch;
   }
-  #plantSelect {
+  #plantSelect,
+  #biomeSelect {
     width: 100%;
   }
   .btn-back {
