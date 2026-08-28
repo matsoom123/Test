@@ -282,6 +282,19 @@ body {
   margin: 0 0 0.75rem;
 }
 
+.fun-fact {
+  font-size: 0.95rem;
+  max-width: 80ch;
+  margin: 0 0 0.75rem;
+  padding: 0.65rem 0.9rem;
+  background: var(--accent-light);
+  border-radius: 8px;
+}
+
+.fun-fact strong {
+  color: var(--accent);
+}
+
 .state-count {
   font-size: 0.85rem;
   color: var(--accent);
