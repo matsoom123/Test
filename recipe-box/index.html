@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recipe Box</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="app-header">
+  <div class="header-inner">
+    <h1 class="logo">🍲 Recipe Box</h1>
+    <button id="addBtn" class="btn btn-primary">+ Add Recipe</button>
+  </div>
+</header>
+
+<main class="app-main">
+  <div class="controls" id="controls" hidden>
+    <input type="search" id="searchInput" class="search-input" placeholder="Search by title or ingredient…">
+    <div class="cuisine-pills" id="cuisinePills"></div>
+  </div>
+
+  <div id="emptyState" class="empty-state">
+    <div class="empty-emoji">🍽️</div>
+    <h2>No recipes saved yet</h2>
+    <p>Paste a link to a recipe you found online and we'll try to fill in the details — or add one by hand.</p>
+    <button id="emptyAddBtn" class="btn btn-primary">+ Add your first recipe</button>
+  </div>
+
+  <p id="noResults" class="no-results" hidden>No recipes match your search.</p>
+
+  <div id="grid" class="recipe-grid"></div>
+</main>
+
+<dialog id="formDialog" class="dialog">
+  <form id="recipeForm" class="recipe-form">
+    <div class="dialog-head">
+      <h2 id="formTitle">Add a recipe</h2>
+      <button type="button" id="cancelFormBtnX" class="icon-btn" aria-label="Close">×</button>
+    </div>
+
+    <div class="fetch-row">
+      <label class="field grow">
+        <span>Recipe URL</span>
+        <input type="url" id="sourceUrl" placeholder="https://example.com/recipe">
+      </label>
+      <button type="button" id="fetchBtn" class="btn btn-secondary">Fetch details</button>
+    </div>
+    <p id="fetchStatus" class="fetch-status"></p>
+
+    <label class="field">
+      <span>Title *</span>
+      <input type="text" id="titleInput" required>
+    </label>
+
+    <div class="field-row">
+      <label class="field">
+        <span>Cuisine</span>
+        <select id="cuisineSelect">
+          <option value="">Select…</option>
+          <option value="Italian">Italian</option>
+          <option value="Mexican">Mexican</option>
+          <option value="Chinese">Chinese</option>
+          <option value="Japanese">Japanese</option>
+          <option value="Thai">Thai</option>
+          <option value="Indian">Indian</option>
+          <option value="French">French</option>
+          <option value="Mediterranean">Mediterranean</option>
+          <option value="American">American</option>
+          <option value="Greek">Greek</option>
+          <option value="Korean">Korean</option>
+          <option value="Vietnamese">Vietnamese</option>
+          <option value="Middle Eastern">Middle Eastern</option>
+          <option value="Spanish">Spanish</option>
+          <option value="Caribbean">Caribbean</option>
+          <option value="German">German</option>
+          <option value="British">British</option>
+          <option value="African">African</option>
+          <option value="__other__">Other…</option>
+        </select>
+      </label>
+      <label class="field" id="customCuisineField" hidden>
+        <span>Custom cuisine</span>
+        <input type="text" id="customCuisineInput" placeholder="e.g. Peruvian">
+      </label>
+    </div>
+
+    <label class="field">
+      <span>Image URL</span>
+      <input type="url" id="imageInput" placeholder="https://…">
+    </label>
+
+    <label class="field">
+      <span>Ingredients <small>(one per line)</small></span>
+      <textarea id="ingredientsInput" rows="6" placeholder="2 cups flour&#10;1 tsp salt&#10;…"></textarea>
+    </label>
+
+    <label class="field">
+      <span>Instructions <small>(one step per line)</small></span>
+      <textarea id="instructionsInput" rows="6" placeholder="Preheat oven to 375°F&#10;Mix dry ingredients&#10;…"></textarea>
+    </label>
+
+    <label class="field">
+      <span>Notes</span>
+      <textarea id="notesInput" rows="3" placeholder="Optional — substitutions, who you made this for, how it turned out…"></textarea>
+    </label>
+
+    <div class="form-actions">
+      <button type="button" id="cancelFormBtn" class="btn btn-ghost">Cancel</button>
+      <button type="submit" class="btn btn-primary">Save recipe</button>
+    </div>
+  </form>
+</dialog>
+
+<dialog id="detailDialog" class="dialog detail-dialog">
+  <div id="detailContent"></div>
+</dialog>
+
+<div id="toast" class="toast" hidden></div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
