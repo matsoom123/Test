@@ -14,7 +14,10 @@
 <header class="app-header">
   <div class="header-inner">
     <h1 class="logo">🍲 Recipe Box</h1>
-    <button id="addBtn" class="btn btn-primary">+ Add Recipe</button>
+    <div class="header-actions">
+      <button id="bookmarkletBtn" class="btn btn-secondary">🔖 Bookmarklet</button>
+      <button id="addBtn" class="btn btn-primary">+ Add Recipe</button>
+    </div>
   </div>
 </header>
 
@@ -118,6 +121,21 @@
 
 <dialog id="detailDialog" class="dialog detail-dialog">
   <div id="detailContent"></div>
+</dialog>
+
+<dialog id="bookmarkletDialog" class="dialog">
+  <div class="bookmarklet-content">
+    <div class="dialog-head">
+      <h2>Save recipes from any page</h2>
+      <button type="button" class="icon-btn" id="bookmarkletCloseBtn" aria-label="Close">×</button>
+    </div>
+    <p>Drag this button to your bookmarks bar:</p>
+    <a id="bookmarkletLink" class="btn btn-primary bookmarklet-link" href="#">🍲 Save to Recipe Box</a>
+    <p class="bookmarklet-help">Then, while viewing any recipe page, click it in your bookmarks bar — Recipe Box opens in a new tab with the details already filled in, ready to review and save.</p>
+    <p class="bookmarklet-help">Bookmarks bar hidden, or on mobile? Right-click any existing bookmark → <strong>Add page</strong> (wording varies by browser), name it "Save to Recipe Box", and paste this as the URL instead:</p>
+    <textarea id="bookmarkletCode" class="bookmarklet-code" rows="3" readonly></textarea>
+    <button type="button" class="btn btn-secondary" id="bookmarkletCopyBtn">Copy link</button>
+  </div>
 </dialog>
 
 <div id="toast" class="toast" hidden></div>

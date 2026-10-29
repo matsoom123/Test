@@ -6,11 +6,16 @@ is stored in your browser.
 
 ## Features
 
-- Paste a recipe URL and "Fetch details" to auto-fill title, image,
-  ingredients, instructions, and cuisine (works on sites that publish
-  standard recipe metadata — AllRecipes, NYT Cooking, Serious Eats, Food
-  Network, and many others)
-- If a site can't be auto-filled, the same form opens empty for manual entry
+- A **bookmarklet** you drag to your bookmarks bar: click it while viewing any
+  recipe page and it reads that page's own recipe data directly in your
+  browser, then opens Recipe Box pre-filled — no proxy involved, so it isn't
+  affected by a site's bot protection (click **🔖 Bookmarklet** in the app to
+  get yours)
+- Or paste a recipe URL and click "Fetch details" to auto-fill the same way,
+  routed through a public CORS proxy (works on sites that publish standard
+  recipe metadata and don't block proxy traffic — results vary by site)
+- If a site can't be auto-filled either way, the same form opens empty for
+  manual entry
 - Filter by cuisine with pill buttons built from the cuisines you've actually
   saved, plus a text search across titles and ingredients
 - Click any card for the full recipe, a link back to the original page, and
@@ -37,19 +42,30 @@ and GitHub gives you a URL.
 
 ## How auto-fill works (and its limits)
 
-Browsers block a page from directly fetching another site's HTML (CORS), so
-this app routes the fetch through a public CORS proxy, then looks for the
-`Recipe` structured data (JSON-LD / schema.org) that most recipe sites embed
-in their pages for Google. That's reliable for sites that publish it, but:
+Both auto-fill paths look for the same thing: the `Recipe` structured data
+(JSON-LD / schema.org) that most recipe sites embed in their pages for
+Google — title, ingredients, instructions, cuisine, image.
 
-- Not every recipe site includes this data — some will fail to auto-fill
-- It depends on a third-party proxy being available; if it's down, auto-fill
-  will fail and you'll be prompted to enter details manually
+**The bookmarklet** runs inside the recipe page itself, in your own browser,
+so it reads that data directly off the page with no network request of its
+own. This is the more reliable option — it isn't affected by a site's bot
+protection, since nothing about the request looks any different from you
+just browsing the page.
+
+**Pasting a URL** instead fetches the page through a public CORS proxy
+(browsers block a page from directly fetching another site's HTML). This
+depends on the proxy being up, and on the target site not blocking that
+proxy's traffic — many recipe sites sit behind bot protection that blocks
+exactly this kind of request, so it's noticeably less reliable than the
+bookmarklet.
+
+Either way:
+- Not every recipe site includes this structured data — some pages will
+  always need manual entry
 - Auto-filled fields can be messy (e.g. instructions split oddly) — always
   review before saving
-
-Either way, saving still works — it just falls back to a blank form you fill
-in yourself.
+- Saving still works either way — it just falls back to a blank form you
+  fill in yourself
 
 ## Data & privacy
 

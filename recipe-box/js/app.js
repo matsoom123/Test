@@ -57,6 +57,13 @@ const cancelFormBtnX = document.getElementById('cancelFormBtnX');
 const detailDialog = document.getElementById('detailDialog');
 const detailContent = document.getElementById('detailContent');
 
+const bookmarkletBtn = document.getElementById('bookmarkletBtn');
+const bookmarkletDialog = document.getElementById('bookmarkletDialog');
+const bookmarkletCloseBtn = document.getElementById('bookmarkletCloseBtn');
+const bookmarkletLink = document.getElementById('bookmarkletLink');
+const bookmarkletCode = document.getElementById('bookmarkletCode');
+const bookmarkletCopyBtn = document.getElementById('bookmarkletCopyBtn');
+
 const toast = document.getElementById('toast');
 
 const PRESET_CUISINES = Array.from(cuisineSelect.options)
@@ -239,6 +246,80 @@ function setCuisineFields(cuisine) {
 cuisineSelect.addEventListener('change', () => {
   customCuisineField.hidden = cuisineSelect.value !== '__other__';
 });
+
+// ---- Bookmarklet ----
+// Runs on the page the user is actually viewing, so it reads that page's own
+// recipe schema directly (no fetch, no proxy, nothing for a site's bot
+// protection to block) and opens Recipe Box with the result pre-filled.
+
+function buildBookmarkletHref() {
+  const target = window.location.origin + window.location.pathname;
+  const code = `(function(){
+    function collect(node,out){if(Array.isArray(node)){node.forEach(function(n){collect(n,out)});return}if(!node||typeof node!=='object')return;var t=node['@type'];var types=Array.isArray(t)?t:[t];if(types.indexOf('Recipe')!==-1)out.push(node);if(node['@graph'])collect(node['@graph'],out)}
+    function img(i){if(!i)return'';if(Array.isArray(i))return img(i[0]);if(typeof i==='string')return i;if(typeof i==='object')return i.url||i['@id']||'';return''}
+    function cuisine(c){if(!c)return'';if(Array.isArray(c))return c[0]||'';return String(c)}
+    function flat(ins){if(!ins)return[];if(typeof ins==='string')return ins.split(/\\n+/).map(function(s){return s.trim()}).filter(Boolean);if(Array.isArray(ins)){var out=[];ins.forEach(function(it){if(typeof it==='string'){out.push(it.trim())}else if(it&&typeof it==='object'){if(it['@type']==='HowToSection'&&Array.isArray(it.itemListElement)){out=out.concat(flat(it.itemListElement))}else{out.push(String(it.text||it.name||'').trim())}}});return out.filter(Boolean)}return[]}
+    var scripts=document.querySelectorAll('script[type="application/ld+json"]');
+    var found=[];
+    scripts.forEach(function(s){try{collect(JSON.parse(s.textContent),found)}catch(e){}});
+    var node=found[0];
+    if(!node){alert('No recipe data found on this page. Add it to Recipe Box manually instead.');return}
+    var recipe={title:String(node.name||'').trim(),image:img(node.image),cuisine:cuisine(node.recipeCuisine),ingredients:Array.isArray(node.recipeIngredient)?node.recipeIngredient.map(function(s){return String(s).trim()}).filter(Boolean):[],instructions:flat(node.recipeInstructions),sourceUrl:location.href};
+    var data=encodeURIComponent(JSON.stringify(recipe));
+    window.open('${target}#import='+data,'recipeBoxImport');
+  })();`;
+  return 'javascript:' + encodeURIComponent(code.replace(/\s+/g, ' '));
+}
+
+bookmarkletBtn.addEventListener('click', () => {
+  const href = buildBookmarkletHref();
+  bookmarkletLink.href = href;
+  bookmarkletCode.value = href;
+  bookmarkletDialog.showModal();
+});
+
+bookmarkletLink.addEventListener('click', e => {
+  e.preventDefault();
+  showToast('Drag this to your bookmarks bar rather than clicking it.');
+});
+
+bookmarkletCloseBtn.addEventListener('click', () => bookmarkletDialog.close());
+bookmarkletDialog.addEventListener('click', e => {
+  if (e.target === bookmarkletDialog) bookmarkletDialog.close();
+});
+
+bookmarkletCopyBtn.addEventListener('click', async () => {
+  try {
+    await navigator.clipboard.writeText(bookmarkletCode.value);
+    showToast('Link copied.');
+  } catch (e) {
+    bookmarkletCode.select();
+    showToast('Select the text and copy it manually.');
+  }
+});
+
+function checkImportFromHash() {
+  if (!window.location.hash.startsWith('#import=')) return;
+  try {
+    const parsed = JSON.parse(decodeURIComponent(window.location.hash.slice('#import='.length)));
+    openAddDialog();
+    if (parsed.sourceUrl) sourceUrlInput.value = parsed.sourceUrl;
+    applyParsedRecipe({
+      title: parsed.title || '',
+      image: parsed.image || '',
+      cuisine: parsed.cuisine || '',
+      ingredients: Array.isArray(parsed.ingredients) ? parsed.ingredients : [],
+      instructions: Array.isArray(parsed.instructions) ? parsed.instructions : [],
+    });
+    fetchStatus.textContent = parsed.title
+      ? 'Filled in from the page via the bookmarklet — double-check everything below.'
+      : "Couldn't find recipe details on that page — enter them manually.";
+  } catch (e) {
+    showToast("Couldn't read the recipe from that link.");
+  } finally {
+    history.replaceState(null, '', window.location.pathname + window.location.search);
+  }
+}
 
 // ---- Form dialog ----
 
@@ -496,3 +577,4 @@ function render() {
 }
 
 render();
+checkImportFromHash();
